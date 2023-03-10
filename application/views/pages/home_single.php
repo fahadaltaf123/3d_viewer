@@ -19,46 +19,10 @@
         <!-- FontAwesome Link - End -->
 
         <!-- Custom Css Link -->
-        <link href="http://localhost/360/assets/style.css" rel="stylesheet">
-        <style>
-            .details {
-    padding: 10px;
-    font-size: 14px;
-    display: flex;
-    justify-content: space-between;
-    text-transform: uppercase;
-    background-color: #686767;
-  }
-  .details .surface {
-    text-align: right;
-    
-  }
-  .details > div {
-    line-height: 15px;
-    /* font-family: "Montserrat Light" ; */
-  }
-  .details span.bold {
-    font-weight: 700;
-      /* font-family: "Montserrat Bold" ; */
-  }
-  .details span.border {
-    opacity: 0.9;
-    position: relative;
-    line-height: 22px;
-  }
-  .details span.border:before {
-    content: "";
-    background-color: #686767;
-    width: 125%;
-    height: 2px;
-    z-index: -1;
-    position: absolute;
-    bottom: 4px;
-  }
-        </style>
+        <link href="https://www.visualez.com/360/assets/style.css" rel="stylesheet">
     </head>
 
-    <body style="background-color: #3e3f3f;">
+    <body>
         <?php
 
             $link =  $query->link_360;
@@ -82,11 +46,6 @@
                 $checkValue = 2;
             }
 
-            $unique_tiles = explode(",",  $query->unique_tiles)[0] ;
-            
-            $unique_tiles_link = 'https://www.visualez.com/uploadtile/tiles/combined/'. $unique_tiles;
-            //echo $unique_tiles_link;
-
             //echo count(array_keys((array)$bottom_bar));
             //echo count($bottom_bar->planes);
             //print_r(isset($bottom_bar->planes[0]->tilename));
@@ -94,71 +53,7 @@
             //print_r($Name_array);
             
         ?>
-        
-        
-        <div class="images" style="
-            margin-left: auto;
-            width: 300px;
-            margin-right: auto;
-        ">
-            <div class="logo">
-            <?php
-                $site_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-                if($checkValue == 1){ ?>
-                <img class="design-image" src="https://<?php echo $logo_link1 ?>" alt="logos" title="Logo">
-                <?php }elseif($checkValue == 2){ ?>
-                <img class="design-image" src="https://<?php echo $logo_link2 ?>" alt="logos" title="Logo">
-                <?php } ?>
-            </div>
-
-            <div class="main-img">
-                <img width="300px" height="auto" src="<?php (isset($unique_tiles_link)) ? print_r($unique_tiles_link) : ''; ?>" alt="">
-            </div>
-            <div class="title">
-                <div class="details" style="
-                    color: #fff;
-                    margin-top: 20px;
-                ">
-
-                    <div class="size mt">
-                        <span class="bold">Size</span> <br><span><?=  explode("_", $unique_tiles)[1] ?>x<?=  explode("_", $unique_tiles)[2] ?>MM</span>
-                    </div>
-                    <div class="surface">
-                        <span class="bold"> Finish </span> <br> <span><?=  explode("_", $unique_tiles)[3] ?> <?=  explode("_", $unique_tiles)[4] ?></span>
-                    </div>
-                </div>
-
-            </div>
-            <div class="line desktop"></div>
-            <div class="images" style="
-                margin-top: 30px;
-                margin-bottom: 30px;
-            ">
-                <div class="info">
-                    <div class="random-img" style="
-                        display: flex;
-                        justify-content: space-between;
-                    ">
-                        <?php foreach ($patterned as $key => $value) { ?>
-                            <img width="137px" height="auto" src="<?php (isset($value->url)) ? print_r($value->url) : ''; ?>" alt="">
-                        <?php }?>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        
-        <!-- Pannellum base div -->
-        <div id="panorama" style="
-        position: relative;
-        width: 75vw;
-        height: 75vh;
-        margin-top: 80px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom:400px
-        "><div class='design'>
+        <div class='design'>
             <div>
                 <?php
                 $site_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
@@ -233,7 +128,10 @@
             <div class="footer-btn">
                <!-- <button>Powered By <b>Visualze</b></button> -->
             </div>
-        </div></div>
+        </div>
+        
+        <!-- Pannellum base div -->
+        <div id="panorama" style="position: relative;"></div>
 
         <!-- Bootstrap Js Link -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>

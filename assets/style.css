@@ -5,7 +5,8 @@
 }
 
 body{
-    background-color: #3e3f3f;
+    background-color: #3e3f3f !important;
+    
 }
 
 #panorama {
@@ -40,6 +41,41 @@ body{
     text-align: center;
     cursor: pointer;
 }
+
+.details {
+    padding: 10px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    background-color: #686767;
+  }
+  .details .surface {
+    text-align: right;
+    
+  }
+  .details > div {
+    line-height: 15px;
+    /* font-family: "Montserrat Light" ; */
+  }
+  .details span.bold {
+    font-weight: 700;
+      /* font-family: "Montserrat Bold" ; */
+  }
+  .details span.border {
+    opacity: 0.9;
+    position: relative;
+    line-height: 22px;
+  }
+  .details span.border:before {
+    content: "";
+    background-color: #686767;
+    width: 125%;
+    height: 2px;
+    z-index: -1;
+    position: absolute;
+    bottom: 4px;
+  }
 
 .footer {
     display:flex;

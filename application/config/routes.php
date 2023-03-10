@@ -52,6 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 // $route['360'] = 'home/index';
 $route['3d/(:num)'] = 'home/view/$1';
+$route['(:num)'] = 'home/view_single/$1';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
